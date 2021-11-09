@@ -1,0 +1,19 @@
+*** Settings ***
+Documentation   Resource file for Login Page related resources
+Library         LoginPage.LoginPage
+Library         SeleniumLibrary
+
+*** Keywords ***
+Open Browser with Login Page
+    ${orig_wait}=   Set Selenium Implicit Wait	5 seconds
+    open_login_page
+
+User with name "${uname}" and password "${pwd}" tries to log in into application
+    login       ${uname}        ${pwd}
+
+Verify user logged in successfully
+    verify_login
+
+Verify error "${error}" for user login
+    verify_login    success=${False}    exp_error=${error}
+

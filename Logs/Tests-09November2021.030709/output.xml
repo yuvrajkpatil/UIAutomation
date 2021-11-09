@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211109 15:06:35.581" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="D:\Yuvi\Tests">
+<suite id="s1-s1" name="EndToEnd" source="D:\Yuvi\Tests\EndToEnd.robot">
+<kw name="Open Browser with Login Page" library="LoginResources" type="SETUP">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<var>${orig_wait}</var>
+<arg>5 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<msg timestamp="20211109 15:06:35.831" level="INFO">${orig_wait} = 0 seconds</msg>
+<status status="PASS" starttime="20211109 15:06:35.830" endtime="20211109 15:06:35.831"/>
+</kw>
+<kw name="Open Login Page" library="LoginPage.LoginPage">
+<msg timestamp="20211109 15:06:35.831" level="INFO">open_login_page (self = &lt;LoginPage.LoginPage object at 0x000001C39456A920&gt; )</msg>
+<msg timestamp="20211109 15:06:35.831" level="INFO">Opening browser [gc] with URL [https://www.saucedemo.com/]</msg>
+<msg timestamp="20211109 15:06:35.832" level="INFO">Opening browser 'gc' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20211109 15:06:35.831" endtime="20211109 15:06:37.638"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211109 15:06:37.639" endtime="20211109 15:06:37.769"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:35.830" endtime="20211109 15:06:37.770"/>
+</kw>
+<test id="s1-s1-t1" name="End to End flow for application">
+<kw name="Login with &quot;${username}&quot; username and &quot;${password}&quot; password and verify successful login" sourcename="Login with &quot;${username}&quot; username and &quot;${password}&quot; password and verify successful login">
+<kw name="User with name &quot;${username}&quot; and password &quot;${password}&quot; tries to log in into application" library="LoginResources" sourcename="User with name &quot;${uname}&quot; and password &quot;${pwd}&quot; tries to log in into application">
+<kw name="Login" library="LoginPage.LoginPage">
+<arg>${uname}</arg>
+<arg>${pwd}</arg>
+<msg timestamp="20211109 15:06:37.775" level="INFO">login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E4D90&gt;, username = 'standard_user', password = 'secret_sauce' )</msg>
+<msg timestamp="20211109 15:06:37.915" level="INFO">Current page URL: https://www.saucedemo.com/</msg>
+<msg timestamp="20211109 15:06:37.953" level="INFO">Typing text 'standard_user' into text field 'css:[data-test='username']'.</msg>
+<msg timestamp="20211109 15:06:38.095" level="INFO">Typing password into text field 'css:[data-test='password']'.</msg>
+<msg timestamp="20211109 15:06:38.142" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211109 15:06:38.213" level="INFO">Log level changed from NONE to INFO.</msg>
+<msg timestamp="20211109 15:06:38.213" level="INFO">Clicking element 'css:[data-test='login-button']'.</msg>
+<status status="PASS" starttime="20211109 15:06:37.775" endtime="20211109 15:06:38.372"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:37.774" endtime="20211109 15:06:38.373"/>
+</kw>
+<kw name="Verify user logged in successfully" library="LoginResources">
+<kw name="Verify Login" library="LoginPage.LoginPage">
+<msg timestamp="20211109 15:06:38.374" level="INFO">verify_login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E4D90&gt;, success = True, exp_error = '' )</msg>
+<msg timestamp="20211109 15:06:38.374" level="INFO">Verifying successful user login</msg>
+<msg timestamp="20211109 15:06:38.701" level="INFO">Header: Actual: PRODUCTS, Expected: PRODUCTS</msg>
+<msg timestamp="20211109 15:06:38.701" level="INFO">User logged in successfully</msg>
+<status status="PASS" starttime="20211109 15:06:38.374" endtime="20211109 15:06:38.701"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:38.373" endtime="20211109 15:06:38.701"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:37.773" endtime="20211109 15:06:38.701"/>
+</kw>
+<kw name="Verify item &quot;${backpack}&quot; is listed on inventory page" library="InventoryResources" sourcename="Verify item &quot;${item}&quot; is listed on inventory page">
+<kw name="Check Item Listing" library="InventoryPage.InventoryPage">
+<arg>${item}</arg>
+<msg timestamp="20211109 15:06:38.702" level="INFO">check_item_listing (self = &lt;InventoryPage.InventoryPage object at 0x000001C3945E52D0&gt;, item = {'name': 'Sauce Labs Backpack', 'locator': 'sauce-labs-backpack', 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.', 'price': 29.99} )</msg>
+<msg timestamp="20211109 15:06:38.707" level="INFO">Current browser location: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:06:38.708" level="INFO">User is already on inventory page</msg>
+<msg timestamp="20211109 15:06:38.708" level="INFO">Selector with placeholder: css=button[data-test='add-to-cart-{placeholder}'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:38.708" level="INFO">Resolved Selector: css=button[data-test='add-to-cart-sauce-labs-backpack']</msg>
+<msg timestamp="20211109 15:06:38.734" level="INFO">Element 'css=button[data-test='add-to-cart-sauce-labs-backpack']' is displayed.</msg>
+<msg timestamp="20211109 15:06:38.735" level="INFO">Add to Cart Button for item is available, hence proceeding ahead with further verification</msg>
+<msg timestamp="20211109 15:06:38.735" level="INFO">Selector with placeholder: xpath=//button[@data-test='add-to-cart-{placeholder}']/ancestor::div[@class='inventory_item_description']//div[@class='inventory_item_name'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:38.735" level="INFO">Resolved Selector: xpath=//button[@data-test='add-to-cart-sauce-labs-backpack']/ancestor::div[@class='inventory_item_description']//div[@class='inventory_item_name']</msg>
+<msg timestamp="20211109 15:06:38.765" level="INFO">Selector with placeholder: xpath=//button[@data-test='add-to-cart-{placeholder}']/ancestor::div[@class='inventory_item_description']//div[@class='inventory_item_desc'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:38.765" level="INFO">Resolved Selector: xpath=//button[@data-test='add-to-cart-sauce-labs-backpack']/ancestor::div[@class='inventory_item_description']//div[@class='inventory_item_desc']</msg>
+<msg timestamp="20211109 15:06:38.792" level="INFO">Selector with placeholder: xpath=//button[@data-test='add-to-cart-{placeholder}']/preceding-sibling::div, value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:38.792" level="INFO">Resolved Selector: xpath=//button[@data-test='add-to-cart-sauce-labs-backpack']/preceding-sibling::div</msg>
+<msg timestamp="20211109 15:06:38.819" level="INFO">Item Name: Actual: Sauce Labs Backpack, Expected: Sauce Labs Backpack</msg>
+<msg timestamp="20211109 15:06:38.819" level="INFO">Item Description: Actual: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection., Expected: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.</msg>
+<msg timestamp="20211109 15:06:38.819" level="INFO">Item Price: Actual: $29.99, Expected: $29.99</msg>
+<status status="PASS" starttime="20211109 15:06:38.702" endtime="20211109 15:06:38.819"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:38.702" endtime="20211109 15:06:38.819"/>
+</kw>
+<kw name="Add item &quot;${backpack}&quot; to cart" library="InventoryResources" sourcename="Add item &quot;${item}&quot; to cart">
+<kw name="Add Item To Cart" library="InventoryPage.InventoryPage">
+<arg>${item}</arg>
+<msg timestamp="20211109 15:06:38.820" level="INFO">add_item_to_cart (self = &lt;InventoryPage.InventoryPage object at 0x000001C3945E52D0&gt;, item = {'name': 'Sauce Labs Backpack', 'locator': 'sauce-labs-backpack', 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.', 'price': 29.99} )</msg>
+<msg timestamp="20211109 15:06:38.824" level="INFO">Current browser location: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:06:38.824" level="INFO">User is already on inventory page</msg>
+<msg timestamp="20211109 15:06:38.824" level="INFO">Selector with placeholder: css=button[data-test='add-to-cart-{placeholder}'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:38.824" level="INFO">Resolved Selector: css=button[data-test='add-to-cart-sauce-labs-backpack']</msg>
+<msg timestamp="20211109 15:06:38.824" level="INFO">Clicking button 'css=button[data-test='add-to-cart-sauce-labs-backpack']'.</msg>
+<msg timestamp="20211109 15:06:38.880" level="INFO">Selector with placeholder: css=button[data-test='remove-{placeholder}'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:38.880" level="INFO">Resolved Selector: css=button[data-test='remove-sauce-labs-backpack']</msg>
+<msg timestamp="20211109 15:06:38.905" level="INFO">Element 'css=button[data-test='remove-sauce-labs-backpack']' is displayed.</msg>
+<status status="PASS" starttime="20211109 15:06:38.820" endtime="20211109 15:06:38.905"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:38.820" endtime="20211109 15:06:38.905"/>
+</kw>
+<kw name="Navigate to cart page" library="CartResources">
+<kw name="Go To Cart Page" library="CartPage.CartPage">
+<doc>This method navigates user to cart page if not already on cart page</doc>
+<msg timestamp="20211109 15:06:38.910" level="INFO">Current browser location: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:06:38.910" level="INFO">Navigating to cart page by clicking cart link</msg>
+<msg timestamp="20211109 15:06:38.910" level="INFO">Clicking element 'css=.shopping_cart_link'.</msg>
+<status status="PASS" starttime="20211109 15:06:38.906" endtime="20211109 15:06:38.992"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:38.905" endtime="20211109 15:06:38.993"/>
+</kw>
+<kw name="Verify item &quot;${backpack}&quot; with quantity &quot;1&quot; exists in cart" library="CartResources" sourcename="Verify item &quot;${item}&quot; with quantity &quot;${quantity}&quot; exists in cart">
+<kw name="Verify Item In Cart" library="CartPage.CartPage">
+<arg>${item}</arg>
+<arg>quantity=${quantity}</arg>
+<msg timestamp="20211109 15:06:38.994" level="INFO">verify_item_in_cart (self = &lt;CartPage.CartPage object at 0x000001C3945E60B0&gt;, item = {'name': 'Sauce Labs Backpack', 'locator': 'sauce-labs-backpack', 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.', 'price': 29.99}, quantity = '1', item_displayed = True )</msg>
+<msg timestamp="20211109 15:06:38.994" level="INFO">Verifying item Sauce Labs Backpack should be displayed on cart page</msg>
+<msg timestamp="20211109 15:06:38.995" level="INFO">Selector with placeholder: css=[data-test='remove-{placeholder}'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:38.995" level="INFO">Resolved Selector: css=[data-test='remove-sauce-labs-backpack']</msg>
+<msg timestamp="20211109 15:06:39.027" level="INFO">Element 'css=[data-test='remove-sauce-labs-backpack']' is displayed.</msg>
+<msg timestamp="20211109 15:06:39.027" level="INFO">Remove Button for item is available, hence proceeding ahead with further verification</msg>
+<msg timestamp="20211109 15:06:39.027" level="INFO">Selector with placeholder: xpath=//button[@data-test='remove-{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_name'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:39.027" level="INFO">Resolved Selector: xpath=//button[@data-test='remove-sauce-labs-backpack']/ancestor::div[@class='cart_item']//div[@class='inventory_item_name']</msg>
+<msg timestamp="20211109 15:06:39.054" level="INFO">Selector with placeholder: xpath=//button[@data-test='remove-{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_desc'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:39.055" level="INFO">Resolved Selector: xpath=//button[@data-test='remove-sauce-labs-backpack']/ancestor::div[@class='cart_item']//div[@class='inventory_item_desc']</msg>
+<msg timestamp="20211109 15:06:39.079" level="INFO">Selector with placeholder: xpath=//button[@data-test='remove-{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_price'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:39.079" level="INFO">Resolved Selector: xpath=//button[@data-test='remove-sauce-labs-backpack']/ancestor::div[@class='cart_item']//div[@class='inventory_item_price']</msg>
+<msg timestamp="20211109 15:06:39.104" level="INFO">Selector with placeholder: xpath=//button[@data-test='remove-{placeholder}']/ancestor::div[@class='cart_item']/div[@class='cart_quantity'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:39.104" level="INFO">Resolved Selector: xpath=//button[@data-test='remove-sauce-labs-backpack']/ancestor::div[@class='cart_item']/div[@class='cart_quantity']</msg>
+<msg timestamp="20211109 15:06:39.129" level="INFO">Item Name: Actual: Sauce Labs Backpack, Expected: Sauce Labs Backpack</msg>
+<msg timestamp="20211109 15:06:39.129" level="INFO">Item Description: Actual: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection., Expected: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.</msg>
+<msg timestamp="20211109 15:06:39.129" level="INFO">Item Price: Actual: $29.99, Expected: $29.99</msg>
+<msg timestamp="20211109 15:06:39.129" level="INFO">Item Quantity: Actual: 1, Expected: 1</msg>
+<status status="PASS" starttime="20211109 15:06:38.994" endtime="20211109 15:06:39.130"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:38.993" endtime="20211109 15:06:39.130"/>
+</kw>
+<kw name="User logs out from an application" library="LoginResources">
+<kw name="Logout" library="LoginPage.LoginPage">
+<doc>This method does logout from an application</doc>
+<msg timestamp="20211109 15:06:39.135" level="INFO">Current browser location: https://www.saucedemo.com/cart.html</msg>
+<msg timestamp="20211109 15:06:39.135" level="INFO">User is logged in. Logging out...</msg>
+<msg timestamp="20211109 15:06:39.135" level="INFO">Clicking element 'css=#react-burger-menu-btn'.</msg>
+<msg timestamp="20211109 15:06:39.443" level="INFO">Clicking link 'css=#logout_sidebar_link'.</msg>
+<status status="PASS" starttime="20211109 15:06:39.130" endtime="20211109 15:06:39.530"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:39.130" endtime="20211109 15:06:39.530"/>
+</kw>
+<kw name="Login with &quot;${username}&quot; username and &quot;${password}&quot; password and verify successful login" sourcename="Login with &quot;${username}&quot; username and &quot;${password}&quot; password and verify successful login">
+<kw name="User with name &quot;${username}&quot; and password &quot;${password}&quot; tries to log in into application" library="LoginResources" sourcename="User with name &quot;${uname}&quot; and password &quot;${pwd}&quot; tries to log in into application">
+<kw name="Login" library="LoginPage.LoginPage">
+<arg>${uname}</arg>
+<arg>${pwd}</arg>
+<msg timestamp="20211109 15:06:39.532" level="INFO">login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E4D90&gt;, username = 'standard_user', password = 'secret_sauce' )</msg>
+<msg timestamp="20211109 15:06:39.575" level="INFO">Current page URL: https://www.saucedemo.com/</msg>
+<msg timestamp="20211109 15:06:39.597" level="INFO">Typing text 'standard_user' into text field 'css:[data-test='username']'.</msg>
+<msg timestamp="20211109 15:06:39.688" level="INFO">Typing password into text field 'css:[data-test='password']'.</msg>
+<msg timestamp="20211109 15:06:39.905" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211109 15:06:39.999" level="INFO">Log level changed from NONE to INFO.</msg>
+<msg timestamp="20211109 15:06:39.999" level="INFO">Clicking element 'css:[data-test='login-button']'.</msg>
+<status status="PASS" starttime="20211109 15:06:39.531" endtime="20211109 15:06:40.099"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:39.531" endtime="20211109 15:06:40.100"/>
+</kw>
+<kw name="Verify user logged in successfully" library="LoginResources">
+<kw name="Verify Login" library="LoginPage.LoginPage">
+<msg timestamp="20211109 15:06:40.102" level="INFO">verify_login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E4D90&gt;, success = True, exp_error = '' )</msg>
+<msg timestamp="20211109 15:06:40.102" level="INFO">Verifying successful user login</msg>
+<msg timestamp="20211109 15:06:40.351" level="INFO">Header: Actual: PRODUCTS, Expected: PRODUCTS</msg>
+<msg timestamp="20211109 15:06:40.351" level="INFO">User logged in successfully</msg>
+<status status="PASS" starttime="20211109 15:06:40.102" endtime="20211109 15:06:40.351"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:40.100" endtime="20211109 15:06:40.352"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:39.530" endtime="20211109 15:06:40.352"/>
+</kw>
+<kw name="Navigate to cart page" library="CartResources">
+<kw name="Go To Cart Page" library="CartPage.CartPage">
+<doc>This method navigates user to cart page if not already on cart page</doc>
+<msg timestamp="20211109 15:06:40.357" level="INFO">Current browser location: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:06:40.357" level="INFO">Navigating to cart page by clicking cart link</msg>
+<msg timestamp="20211109 15:06:40.357" level="INFO">Clicking element 'css=.shopping_cart_link'.</msg>
+<status status="PASS" starttime="20211109 15:06:40.352" endtime="20211109 15:06:40.405"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:40.352" endtime="20211109 15:06:40.405"/>
+</kw>
+<kw name="Verify item &quot;${backpack}&quot; with quantity &quot;1&quot; exists in cart" library="CartResources" sourcename="Verify item &quot;${item}&quot; with quantity &quot;${quantity}&quot; exists in cart">
+<kw name="Verify Item In Cart" library="CartPage.CartPage">
+<arg>${item}</arg>
+<arg>quantity=${quantity}</arg>
+<msg timestamp="20211109 15:06:40.407" level="INFO">verify_item_in_cart (self = &lt;CartPage.CartPage object at 0x000001C3945E60B0&gt;, item = {'name': 'Sauce Labs Backpack', 'locator': 'sauce-labs-backpack', 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.', 'price': 29.99}, quantity = '1', item_displayed = True )</msg>
+<msg timestamp="20211109 15:06:40.407" level="INFO">Verifying item Sauce Labs Backpack should be displayed on cart page</msg>
+<msg timestamp="20211109 15:06:40.407" level="INFO">Selector with placeholder: css=[data-test='remove-{placeholder}'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:40.407" level="INFO">Resolved Selector: css=[data-test='remove-sauce-labs-backpack']</msg>
+<msg timestamp="20211109 15:06:40.429" level="INFO">Element 'css=[data-test='remove-sauce-labs-backpack']' is displayed.</msg>
+<msg timestamp="20211109 15:06:40.429" level="INFO">Remove Button for item is available, hence proceeding ahead with further verification</msg>
+<msg timestamp="20211109 15:06:40.430" level="INFO">Selector with placeholder: xpath=//button[@data-test='remove-{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_name'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:40.430" level="INFO">Resolved Selector: xpath=//button[@data-test='remove-sauce-labs-backpack']/ancestor::div[@class='cart_item']//div[@class='inventory_item_name']</msg>
+<msg timestamp="20211109 15:06:40.461" level="INFO">Selector with placeholder: xpath=//button[@data-test='remove-{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_desc'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:40.461" level="INFO">Resolved Selector: xpath=//button[@data-test='remove-sauce-labs-backpack']/ancestor::div[@class='cart_item']//div[@class='inventory_item_desc']</msg>
+<msg timestamp="20211109 15:06:40.498" level="INFO">Selector with placeholder: xpath=//button[@data-test='remove-{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_price'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:40.498" level="INFO">Resolved Selector: xpath=//button[@data-test='remove-sauce-labs-backpack']/ancestor::div[@class='cart_item']//div[@class='inventory_item_price']</msg>
+<msg timestamp="20211109 15:06:40.531" level="INFO">Selector with placeholder: xpath=//button[@data-test='remove-{placeholder}']/ancestor::div[@class='cart_item']/div[@class='cart_quantity'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:40.531" level="INFO">Resolved Selector: xpath=//button[@data-test='remove-sauce-labs-backpack']/ancestor::div[@class='cart_item']/div[@class='cart_quantity']</msg>
+<msg timestamp="20211109 15:06:40.563" level="INFO">Item Name: Actual: Sauce Labs Backpack, Expected: Sauce Labs Backpack</msg>
+<msg timestamp="20211109 15:06:40.563" level="INFO">Item Description: Actual: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection., Expected: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.</msg>
+<msg timestamp="20211109 15:06:40.563" level="INFO">Item Price: Actual: $29.99, Expected: $29.99</msg>
+<msg timestamp="20211109 15:06:40.563" level="INFO">Item Quantity: Actual: 1, Expected: 1</msg>
+<status status="PASS" starttime="20211109 15:06:40.406" endtime="20211109 15:06:40.563"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:40.405" endtime="20211109 15:06:40.563"/>
+</kw>
+<kw name="Remove item &quot;${backpack}&quot; from cart" library="CartResources" sourcename="Remove item &quot;${item}&quot; from cart">
+<kw name="Remove Item From Cart" library="CartPage.CartPage">
+<arg>${item}</arg>
+<msg timestamp="20211109 15:06:40.564" level="INFO">remove_item_from_cart (self = &lt;CartPage.CartPage object at 0x000001C3945E60B0&gt;, item = {'name': 'Sauce Labs Backpack', 'locator': 'sauce-labs-backpack', 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.', 'price': 29.99} )</msg>
+<msg timestamp="20211109 15:06:40.564" level="INFO">Selector with placeholder: css=[data-test='remove-{placeholder}'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:40.564" level="INFO">Resolved Selector: css=[data-test='remove-sauce-labs-backpack']</msg>
+<msg timestamp="20211109 15:06:40.564" level="INFO">Clicking button 'css=[data-test='remove-sauce-labs-backpack']'.</msg>
+<msg timestamp="20211109 15:06:40.685" level="INFO">verify_item_in_cart (self = &lt;CartPage.CartPage object at 0x000001C3945E60B0&gt;, item = {'name': 'Sauce Labs Backpack', 'locator': 'sauce-labs-backpack', 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.', 'price': 29.99}, quantity = '1', item_displayed = False )</msg>
+<msg timestamp="20211109 15:06:40.685" level="INFO">Verifying item should not be displayed on cart page</msg>
+<msg timestamp="20211109 15:06:40.686" level="INFO">Selector with placeholder: css=[data-test='remove-{placeholder}'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:40.686" level="INFO">Resolved Selector: css=[data-test='remove-sauce-labs-backpack']</msg>
+<msg timestamp="20211109 15:06:45.703" level="INFO">Element 'css=[data-test='remove-sauce-labs-backpack']' did not exist.</msg>
+<status status="PASS" starttime="20211109 15:06:40.564" endtime="20211109 15:06:45.703"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:40.563" endtime="20211109 15:06:45.703"/>
+</kw>
+<kw name="Navigate to inventory page" library="InventoryResources">
+<kw name="Go To Inventory Page" library="InventoryPage.InventoryPage">
+<doc>This method navigates user to inventory page if not already on inventory page</doc>
+<msg timestamp="20211109 15:06:45.707" level="INFO">Current browser location: https://www.saucedemo.com/cart.html</msg>
+<msg timestamp="20211109 15:06:45.707" level="INFO">Navigating to inventory page by clicking burger menu and then all items link</msg>
+<msg timestamp="20211109 15:06:45.707" level="INFO">Clicking element 'css=#react-burger-menu-btn'.</msg>
+<msg timestamp="20211109 15:06:45.739" level="INFO">Clicking link 'css=#inventory_sidebar_link'.</msg>
+<status status="PASS" starttime="20211109 15:06:45.704" endtime="20211109 15:06:45.870"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:45.703" endtime="20211109 15:06:45.870"/>
+</kw>
+<kw name="Add item &quot;${backpack}&quot; to cart" library="InventoryResources" sourcename="Add item &quot;${item}&quot; to cart">
+<kw name="Add Item To Cart" library="InventoryPage.InventoryPage">
+<arg>${item}</arg>
+<msg timestamp="20211109 15:06:45.872" level="INFO">add_item_to_cart (self = &lt;InventoryPage.InventoryPage object at 0x000001C3945E52D0&gt;, item = {'name': 'Sauce Labs Backpack', 'locator': 'sauce-labs-backpack', 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.', 'price': 29.99} )</msg>
+<msg timestamp="20211109 15:06:45.877" level="INFO">Current browser location: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:06:45.877" level="INFO">User is already on inventory page</msg>
+<msg timestamp="20211109 15:06:45.878" level="INFO">Selector with placeholder: css=button[data-test='add-to-cart-{placeholder}'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:45.878" level="INFO">Resolved Selector: css=button[data-test='add-to-cart-sauce-labs-backpack']</msg>
+<msg timestamp="20211109 15:06:45.878" level="INFO">Clicking button 'css=button[data-test='add-to-cart-sauce-labs-backpack']'.</msg>
+<msg timestamp="20211109 15:06:45.938" level="INFO">Selector with placeholder: css=button[data-test='remove-{placeholder}'], value: sauce-labs-backpack</msg>
+<msg timestamp="20211109 15:06:45.938" level="INFO">Resolved Selector: css=button[data-test='remove-sauce-labs-backpack']</msg>
+<msg timestamp="20211109 15:06:45.977" level="INFO">Element 'css=button[data-test='remove-sauce-labs-backpack']' is displayed.</msg>
+<status status="PASS" starttime="20211109 15:06:45.872" endtime="20211109 15:06:45.977"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:45.871" endtime="20211109 15:06:45.977"/>
+</kw>
+<kw name="Add item &quot;${bikeLight}&quot; to cart" library="InventoryResources" sourcename="Add item &quot;${item}&quot; to cart">
+<kw name="Add Item To Cart" library="InventoryPage.InventoryPage">
+<arg>${item}</arg>
+<msg timestamp="20211109 15:06:45.978" level="INFO">add_item_to_cart (self = &lt;InventoryPage.InventoryPage object at 0x000001C3945E52D0&gt;, item = {'name': 'Sauce Labs Bike Light', 'locator': 'sauce-labs-bike-light', 'description': "A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.", 'price': 9.99} )</msg>
+<msg timestamp="20211109 15:06:45.985" level="INFO">Current browser location: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:06:45.985" level="INFO">User is already on inventory page</msg>
+<msg timestamp="20211109 15:06:45.986" level="INFO">Selector with placeholder: css=button[data-test='add-to-cart-{placeholder}'], value: sauce-labs-bike-light</msg>
+<msg timestamp="20211109 15:06:45.986" level="INFO">Resolved Selector: css=button[data-test='add-to-cart-sauce-labs-bike-light']</msg>
+<msg timestamp="20211109 15:06:45.986" level="INFO">Clicking button 'css=button[data-test='add-to-cart-sauce-labs-bike-light']'.</msg>
+<msg timestamp="20211109 15:06:46.058" level="INFO">Selector with placeholder: css=button[data-test='remove-{placeholder}'], value: sauce-labs-bike-light</msg>
+<msg timestamp="20211109 15:06:46.058" level="INFO">Resolved Selector: css=button[data-test='remove-sauce-labs-bike-light']</msg>
+<msg timestamp="20211109 15:06:46.083" level="INFO">Element 'css=button[data-test='remove-sauce-labs-bike-light']' is displayed.</msg>
+<status status="PASS" starttime="20211109 15:06:45.978" endtime="20211109 15:06:46.083"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:45.978" endtime="20211109 15:06:46.083"/>
+</kw>
+<kw name="Navigate to cart page" library="CartResources">
+<kw name="Go To Cart Page" library="CartPage.CartPage">
+<doc>This method navigates user to cart page if not already on cart page</doc>
+<msg timestamp="20211109 15:06:46.087" level="INFO">Current browser location: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:06:46.087" level="INFO">Navigating to cart page by clicking cart link</msg>
+<msg timestamp="20211109 15:06:46.087" level="INFO">Clicking element 'css=.shopping_cart_link'.</msg>
+<status status="PASS" starttime="20211109 15:06:46.083" endtime="20211109 15:06:46.136"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:46.083" endtime="20211109 15:06:46.137"/>
+</kw>
+<kw name="Navigate to checkout page" library="CheckoutResources">
+<kw name="Go To Checkout Page" library="CheckoutPage.CheckoutPage">
+<doc>This method navigates user to checkout page if not already on checkout page</doc>
+<msg timestamp="20211109 15:06:46.144" level="INFO">Current browser location: https://www.saucedemo.com/cart.html</msg>
+<msg timestamp="20211109 15:06:46.144" level="INFO">Navigating to checkout page by clicking cart link and then checkout button</msg>
+<msg timestamp="20211109 15:06:46.144" level="INFO">Clicking element 'css=.shopping_cart_link'.</msg>
+<msg timestamp="20211109 15:06:46.198" level="INFO">Clicking element 'css=[data-test='checkout']'.</msg>
+<status status="PASS" starttime="20211109 15:06:46.137" endtime="20211109 15:06:46.287"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:46.137" endtime="20211109 15:06:46.287"/>
+</kw>
+<kw name="Fill checkout information as firstname &quot;${first_name}&quot; lastname &quot;${last_name}&quot; and zipcode &quot;${zip_code}&quot;" library="CheckoutResources" sourcename="Fill checkout information as firstname &quot;${fn}&quot; lastname &quot;${ln}&quot; and zipcode &quot;${zc}&quot;">
+<kw name="Fill Checkout Information" library="CheckoutPage.CheckoutPage">
+<arg>${fn}</arg>
+<arg>${ln}</arg>
+<arg>${zc}</arg>
+<msg timestamp="20211109 15:06:46.291" level="INFO">fill_checkout_information (self = &lt;CheckoutPage.CheckoutPage object at 0x000001C394610580&gt;, firstname = 'Test', lastname = 'User', zipcode = '411017' )</msg>
+<msg timestamp="20211109 15:06:46.291" level="INFO">Typing text 'Test' into text field 'css=[data-test='firstName']'.</msg>
+<msg timestamp="20211109 15:06:46.407" level="INFO">Typing text 'User' into text field 'css=[data-test='lastName']'.</msg>
+<msg timestamp="20211109 15:06:46.503" level="INFO">Typing text '411017' into text field 'css=[data-test='postalCode']'.</msg>
+<msg timestamp="20211109 15:06:46.603" level="INFO">Clicking element 'css=[data-test='continue']'.</msg>
+<status status="PASS" starttime="20211109 15:06:46.289" endtime="20211109 15:06:46.700"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:46.288" endtime="20211109 15:06:46.701"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{products}</var>
+<arg>${backpack}</arg>
+<arg>${bikeLight}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20211109 15:06:46.702" level="INFO">@{products} = [ {'name': 'Sauce Labs Backpack', 'locator': 'sauce-labs-backpack', 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and ...</msg>
+<status status="PASS" starttime="20211109 15:06:46.701" endtime="20211109 15:06:46.702"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${product_name}</var>
+<arg>${backpack}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20211109 15:06:46.703" level="INFO">${product_name} = Sauce Labs Backpack</msg>
+<status status="PASS" starttime="20211109 15:06:46.702" endtime="20211109 15:06:46.703"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${product_name2}</var>
+<arg>${bikeLight}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20211109 15:06:46.703" level="INFO">${product_name2} = Sauce Labs Bike Light</msg>
+<status status="PASS" starttime="20211109 15:06:46.703" endtime="20211109 15:06:46.704"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{quantities}</var>
+<arg>${product_name}</arg>
+<arg>1</arg>
+<arg>${product_name2}</arg>
+<arg>1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211109 15:06:46.705" level="INFO">&amp;{quantities} = { Sauce Labs Backpack=1 | Sauce Labs Bike Light=1 }</msg>
+<status status="PASS" starttime="20211109 15:06:46.704" endtime="20211109 15:06:46.705"/>
+</kw>
+<kw name="Verify details on checkout overview page for item &quot;${products}&quot; and quantity &quot;${quantities}&quot;" library="CheckoutResources" sourcename="Verify details on checkout overview page for item &quot;${item}&quot; and quantity &quot;${quantity}&quot;">
+<kw name="Verify Details On Overview Page" library="CheckoutPage.CheckoutPage">
+<arg>${item}</arg>
+<arg>quantities=${quantity}</arg>
+<msg timestamp="20211109 15:06:46.706" level="INFO">verify_details_on_overview_page (self = &lt;CheckoutPage.CheckoutPage object at 0x000001C394610580&gt;, items = [{'name': 'Sauce Labs Backpack', 'locator': 'sauce-labs-backpack', 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.', 'price': 29.99}, {'name': 'Sauce Labs Bike Light', 'locator': 'sauce-labs-bike-light', 'description': "A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.", 'price': 9.99}], quantities = {'Sauce Labs Backpack': '1', 'Sauce Labs Bike Light': '1'} )</msg>
+<msg timestamp="20211109 15:06:46.707" level="INFO">Verifying item details for Sauce Labs Backpack item</msg>
+<msg timestamp="20211109 15:06:46.707" level="INFO">Selector with placeholder: xpath=//div[text()='{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_name'], value: Sauce Labs Backpack</msg>
+<msg timestamp="20211109 15:06:46.707" level="INFO">Resolved Selector: xpath=//div[text()='Sauce Labs Backpack']/ancestor::div[@class='cart_item']//div[@class='inventory_item_name']</msg>
+<msg timestamp="20211109 15:06:46.733" level="INFO">Selector with placeholder: xpath=//div[text()='{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_desc'], value: Sauce Labs Backpack</msg>
+<msg timestamp="20211109 15:06:46.733" level="INFO">Resolved Selector: xpath=//div[text()='Sauce Labs Backpack']/ancestor::div[@class='cart_item']//div[@class='inventory_item_desc']</msg>
+<msg timestamp="20211109 15:06:46.759" level="INFO">Selector with placeholder: xpath=//div[text()='{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_price'], value: Sauce Labs Backpack</msg>
+<msg timestamp="20211109 15:06:46.759" level="INFO">Resolved Selector: xpath=//div[text()='Sauce Labs Backpack']/ancestor::div[@class='cart_item']//div[@class='inventory_item_price']</msg>
+<msg timestamp="20211109 15:06:46.790" level="INFO">Selector with placeholder: xpath=//div[text()='{placeholder}']/ancestor::div[@class='cart_item']//div[@class='cart_quantity'], value: Sauce Labs Backpack</msg>
+<msg timestamp="20211109 15:06:46.790" level="INFO">Resolved Selector: xpath=//div[text()='Sauce Labs Backpack']/ancestor::div[@class='cart_item']//div[@class='cart_quantity']</msg>
+<msg timestamp="20211109 15:06:46.816" level="INFO">Item Name: Actual: Sauce Labs Backpack, Expected: Sauce Labs Backpack</msg>
+<msg timestamp="20211109 15:06:46.816" level="INFO">Item Description: Actual: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection., Expected: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.</msg>
+<msg timestamp="20211109 15:06:46.816" level="INFO">Item Price: Actual: $29.99, Expected: $29.99</msg>
+<msg timestamp="20211109 15:06:46.816" level="INFO">Item Quantity: Actual: 1, Expected: 1</msg>
+<msg timestamp="20211109 15:06:46.816" level="INFO">Verifying item details for Sauce Labs Bike Light item</msg>
+<msg timestamp="20211109 15:06:46.816" level="INFO">Selector with placeholder: xpath=//div[text()='{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_name'], value: Sauce Labs Bike Light</msg>
+<msg timestamp="20211109 15:06:46.816" level="INFO">Resolved Selector: xpath=//div[text()='Sauce Labs Bike Light']/ancestor::div[@class='cart_item']//div[@class='inventory_item_name']</msg>
+<msg timestamp="20211109 15:06:46.841" level="INFO">Selector with placeholder: xpath=//div[text()='{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_desc'], value: Sauce Labs Bike Light</msg>
+<msg timestamp="20211109 15:06:46.841" level="INFO">Resolved Selector: xpath=//div[text()='Sauce Labs Bike Light']/ancestor::div[@class='cart_item']//div[@class='inventory_item_desc']</msg>
+<msg timestamp="20211109 15:06:46.868" level="INFO">Selector with placeholder: xpath=//div[text()='{placeholder}']/ancestor::div[@class='cart_item']//div[@class='inventory_item_price'], value: Sauce Labs Bike Light</msg>
+<msg timestamp="20211109 15:06:46.868" level="INFO">Resolved Selector: xpath=//div[text()='Sauce Labs Bike Light']/ancestor::div[@class='cart_item']//div[@class='inventory_item_price']</msg>
+<msg timestamp="20211109 15:06:46.896" level="INFO">Selector with placeholder: xpath=//div[text()='{placeholder}']/ancestor::div[@class='cart_item']//div[@class='cart_quantity'], value: Sauce Labs Bike Light</msg>
+<msg timestamp="20211109 15:06:46.896" level="INFO">Resolved Selector: xpath=//div[text()='Sauce Labs Bike Light']/ancestor::div[@class='cart_item']//div[@class='cart_quantity']</msg>
+<msg timestamp="20211109 15:06:46.924" level="INFO">Item Name: Actual: Sauce Labs Bike Light, Expected: Sauce Labs Bike Light</msg>
+<msg timestamp="20211109 15:06:46.925" level="INFO">Item Description: Actual: A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included., Expected: A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.</msg>
+<msg timestamp="20211109 15:06:46.925" level="INFO">Item Price: Actual: $9.99, Expected: $9.99</msg>
+<msg timestamp="20211109 15:06:46.925" level="INFO">Item Quantity: Actual: 1, Expected: 1</msg>
+<msg timestamp="20211109 15:06:47.174" level="INFO">Payment Info Label: Actual: Payment Information:, Expected: Payment Information:</msg>
+<msg timestamp="20211109 15:06:47.174" level="INFO">Payment Info Value: Actual: SauceCard #31337, Expected: SauceCard #31337</msg>
+<msg timestamp="20211109 15:06:47.174" level="INFO">Shipping Info Label: Actual: Shipping Information:, Expected: Shipping Information:</msg>
+<msg timestamp="20211109 15:06:47.175" level="INFO">Shipping Info Value: Actual: FREE PONY EXPRESS DELIVERY!, Expected: FREE PONY EXPRESS DELIVERY!</msg>
+<msg timestamp="20211109 15:06:47.175" level="INFO">Item Total: Actual: Item total: $39.98, Expected: Item total: $39.98</msg>
+<msg timestamp="20211109 15:06:47.176" level="INFO">Tax: Actual: Tax: $3.20, Expected: Tax: $3.20</msg>
+<msg timestamp="20211109 15:06:47.176" level="INFO">Total: Actual: Total: $43.18, Expected: Total: $43.18</msg>
+<status status="PASS" starttime="20211109 15:06:46.706" endtime="20211109 15:06:47.177"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:46.705" endtime="20211109 15:06:47.177"/>
+</kw>
+<kw name="Complete checkout and verify successful checkout" library="CheckoutResources">
+<kw name="Complete Checkout And Verify" library="CheckoutPage.CheckoutPage">
+<doc>This method completes the checkout and verifies successful checkout</doc>
+<msg timestamp="20211109 15:06:47.179" level="INFO">Completing checkout by clicking on Finish button</msg>
+<msg timestamp="20211109 15:06:47.179" level="INFO">Clicking element 'css=[data-test='finish']'.</msg>
+<msg timestamp="20211109 15:06:47.418" level="INFO">Thank You Text: Actual: THANK YOU FOR YOUR ORDER, Expected: THANK YOU FOR YOUR ORDER</msg>
+<msg timestamp="20211109 15:06:47.418" level="INFO">Complete Text: Actual: Your order has been dispatched, and will arrive just as fast as the pony can get there!, Expected: Your order has been dispatched, and will arrive just as fast as the pony can get there!</msg>
+<msg timestamp="20211109 15:06:47.461" level="INFO">Element 'css=img.pony_express' is displayed.</msg>
+<status status="PASS" starttime="20211109 15:06:47.178" endtime="20211109 15:06:47.462"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:47.177" endtime="20211109 15:06:47.462"/>
+</kw>
+<kw name="Navigate back to home from complete checkout page" library="CheckoutResources">
+<kw name="Navigate To Home" library="CheckoutPage.CheckoutPage">
+<doc>This method verifies Back Home button is displayed on order complete page
+And on clicking user user is redirected to inventory page</doc>
+<msg timestamp="20211109 15:06:47.490" level="INFO">Element 'css=[data-test='back-to-products']' is displayed.</msg>
+<msg timestamp="20211109 15:06:47.490" level="INFO">Clicking element 'css=[data-test='back-to-products']'.</msg>
+<status status="PASS" starttime="20211109 15:06:47.462" endtime="20211109 15:06:47.580"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:47.462" endtime="20211109 15:06:47.580"/>
+</kw>
+<kw name="User logs out from an application" library="LoginResources">
+<kw name="Logout" library="LoginPage.LoginPage">
+<doc>This method does logout from an application</doc>
+<msg timestamp="20211109 15:06:47.586" level="INFO">Current browser location: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:06:47.586" level="INFO">User is logged in. Logging out...</msg>
+<msg timestamp="20211109 15:06:47.586" level="INFO">Clicking element 'css=#react-burger-menu-btn'.</msg>
+<msg timestamp="20211109 15:06:47.908" level="INFO">Clicking link 'css=#logout_sidebar_link'.</msg>
+<status status="PASS" starttime="20211109 15:06:47.581" endtime="20211109 15:06:48.004"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:47.580" endtime="20211109 15:06:48.005"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211109 15:06:48.005" endtime="20211109 15:06:48.005"/>
+</kw>
+<tag>regression</tag>
+<tag>sanity</tag>
+<status status="PASS" starttime="20211109 15:06:37.771" endtime="20211109 15:06:48.005"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211109 15:06:48.006" endtime="20211109 15:06:50.282"/>
+</kw>
+<doc>Login to test application</doc>
+<status status="PASS" starttime="20211109 15:06:35.610" endtime="20211109 15:06:50.282"/>
+</suite>
+<suite id="s1-s2" name="Login" source="D:\Yuvi\Tests\Login.robot">
+<kw name="Open Browser with Login Page" library="LoginResources" type="SETUP">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<var>${orig_wait}</var>
+<arg>5 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<msg timestamp="20211109 15:06:50.287" level="INFO">${orig_wait} = 5 seconds</msg>
+<status status="PASS" starttime="20211109 15:06:50.287" endtime="20211109 15:06:50.287"/>
+</kw>
+<kw name="Open Login Page" library="LoginPage.LoginPage">
+<msg timestamp="20211109 15:06:50.288" level="INFO">open_login_page (self = &lt;LoginPage.LoginPage object at 0x000001C394569090&gt; )</msg>
+<msg timestamp="20211109 15:06:50.288" level="INFO">Opening browser [gc] with URL [https://www.saucedemo.com/]</msg>
+<msg timestamp="20211109 15:06:50.288" level="INFO">Opening browser 'gc' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20211109 15:06:50.288" endtime="20211109 15:06:52.099"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211109 15:06:52.099" endtime="20211109 15:06:52.231"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:50.287" endtime="20211109 15:06:52.232"/>
+</kw>
+<test id="s1-s2-t1" name="TC01: Verify user logs in successfully with valid creds">
+<kw name="Verify login functionality">
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<arg>NA</arg>
+<kw name="User with name &quot;${username}&quot; and password &quot;${password}&quot; tries to log in into application" library="LoginResources" sourcename="User with name &quot;${uname}&quot; and password &quot;${pwd}&quot; tries to log in into application">
+<kw name="Login" library="LoginPage.LoginPage">
+<arg>${uname}</arg>
+<arg>${pwd}</arg>
+<msg timestamp="20211109 15:06:52.241" level="INFO">login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E7880&gt;, username = 'standard_user', password = 'secret_sauce' )</msg>
+<msg timestamp="20211109 15:06:52.379" level="INFO">Current page URL: https://www.saucedemo.com/</msg>
+<msg timestamp="20211109 15:06:52.417" level="INFO">Typing text 'standard_user' into text field 'css:[data-test='username']'.</msg>
+<msg timestamp="20211109 15:06:52.570" level="INFO">Typing password into text field 'css:[data-test='password']'.</msg>
+<msg timestamp="20211109 15:06:52.622" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211109 15:06:52.706" level="INFO">Log level changed from NONE to INFO.</msg>
+<msg timestamp="20211109 15:06:52.706" level="INFO">Clicking element 'css:[data-test='login-button']'.</msg>
+<status status="PASS" starttime="20211109 15:06:52.240" endtime="20211109 15:06:52.889"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:52.237" endtime="20211109 15:06:52.889"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${error}'=='NA'</arg>
+<arg>Verify user logged in successfully</arg>
+<arg>ELSE</arg>
+<arg>Verify error "${error}" for user login</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Verify user logged in successfully" library="LoginResources">
+<kw name="Verify Login" library="LoginPage.LoginPage">
+<msg timestamp="20211109 15:06:52.892" level="INFO">verify_login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E7880&gt;, success = True, exp_error = '' )</msg>
+<msg timestamp="20211109 15:06:52.892" level="INFO">Verifying successful user login</msg>
+<msg timestamp="20211109 15:06:53.331" level="INFO">Header: Actual: PRODUCTS, Expected: PRODUCTS</msg>
+<msg timestamp="20211109 15:06:53.331" level="INFO">User logged in successfully</msg>
+<status status="PASS" starttime="20211109 15:06:52.891" endtime="20211109 15:06:53.331"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:52.891" endtime="20211109 15:06:53.331"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:52.890" endtime="20211109 15:06:53.331"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:52.233" endtime="20211109 15:06:53.331"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211109 15:06:53.332" endtime="20211109 15:06:53.332"/>
+</kw>
+<tag>regression</tag>
+<tag>sanity</tag>
+<status status="PASS" starttime="20211109 15:06:52.232" endtime="20211109 15:06:53.332"/>
+</test>
+<test id="s1-s2-t2" name="TC02: Verify login error for locked out user">
+<kw name="Verify login functionality">
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<arg>locked_user</arg>
+<kw name="User with name &quot;${username}&quot; and password &quot;${password}&quot; tries to log in into application" library="LoginResources" sourcename="User with name &quot;${uname}&quot; and password &quot;${pwd}&quot; tries to log in into application">
+<kw name="Login" library="LoginPage.LoginPage">
+<arg>${uname}</arg>
+<arg>${pwd}</arg>
+<msg timestamp="20211109 15:06:53.335" level="INFO">login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E7DF0&gt;, username = 'locked_out_user', password = 'secret_sauce' )</msg>
+<msg timestamp="20211109 15:06:53.810" level="INFO">Current page URL: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:06:53.811" level="INFO">Login page is not opened. Looks like user is already logged in. Logging out from application</msg>
+<msg timestamp="20211109 15:06:53.811" level="INFO">Clicking element 'css=#react-burger-menu-btn'.</msg>
+<msg timestamp="20211109 15:06:53.880" level="INFO">Clicking link 'css=#logout_sidebar_link'.</msg>
+<msg timestamp="20211109 15:06:54.094" level="INFO">Typing text 'locked_out_user' into text field 'css:[data-test='username']'.</msg>
+<msg timestamp="20211109 15:06:54.200" level="INFO">Typing password into text field 'css:[data-test='password']'.</msg>
+<msg timestamp="20211109 15:06:54.236" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211109 15:06:54.290" level="INFO">Log level changed from NONE to INFO.</msg>
+<msg timestamp="20211109 15:06:54.290" level="INFO">Clicking element 'css:[data-test='login-button']'.</msg>
+<status status="PASS" starttime="20211109 15:06:53.334" endtime="20211109 15:06:54.344"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:53.334" endtime="20211109 15:06:54.345"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${error}'=='NA'</arg>
+<arg>Verify user logged in successfully</arg>
+<arg>ELSE</arg>
+<arg>Verify error "${error}" for user login</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Verify error &quot;locked_user&quot; for user login" library="LoginResources" sourcename="Verify error &quot;${error}&quot; for user login">
+<kw name="Verify Login" library="LoginPage.LoginPage">
+<arg>success=${False}</arg>
+<arg>exp_error=${error}</arg>
+<msg timestamp="20211109 15:06:54.347" level="INFO">verify_login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E7DF0&gt;, success = False, exp_error = 'locked_user' )</msg>
+<msg timestamp="20211109 15:06:54.347" level="INFO">Verifying failed user login</msg>
+<msg timestamp="20211109 15:06:54.347" level="INFO">Expected Error Message: Epic sadface: Sorry, this user has been locked out.</msg>
+<msg timestamp="20211109 15:06:54.373" level="INFO">Actual Error Message: Epic sadface: Sorry, this user has been locked out.</msg>
+<msg timestamp="20211109 15:06:54.373" level="INFO">Successfully verified user login failure</msg>
+<status status="PASS" starttime="20211109 15:06:54.346" endtime="20211109 15:06:54.373"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:54.345" endtime="20211109 15:06:54.373"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:54.345" endtime="20211109 15:06:54.373"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:53.333" endtime="20211109 15:06:54.373"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211109 15:06:54.374" endtime="20211109 15:06:54.374"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" starttime="20211109 15:06:53.333" endtime="20211109 15:06:54.374"/>
+</test>
+<test id="s1-s2-t3" name="TC03: Verify problem user logs in successfully">
+<kw name="Verify login functionality">
+<arg>problem_user</arg>
+<arg>secret_sauce</arg>
+<arg>NA</arg>
+<kw name="User with name &quot;${username}&quot; and password &quot;${password}&quot; tries to log in into application" library="LoginResources" sourcename="User with name &quot;${uname}&quot; and password &quot;${pwd}&quot; tries to log in into application">
+<kw name="Login" library="LoginPage.LoginPage">
+<arg>${uname}</arg>
+<arg>${pwd}</arg>
+<msg timestamp="20211109 15:06:54.377" level="INFO">login (self = &lt;LoginPage.LoginPage object at 0x000001C394610EB0&gt;, username = 'problem_user', password = 'secret_sauce' )</msg>
+<msg timestamp="20211109 15:06:54.421" level="INFO">Current page URL: https://www.saucedemo.com/</msg>
+<msg timestamp="20211109 15:06:54.446" level="INFO">Typing text 'problem_user' into text field 'css:[data-test='username']'.</msg>
+<msg timestamp="20211109 15:06:54.540" level="INFO">Typing password into text field 'css:[data-test='password']'.</msg>
+<msg timestamp="20211109 15:06:54.581" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211109 15:06:54.661" level="INFO">Log level changed from NONE to INFO.</msg>
+<msg timestamp="20211109 15:06:54.661" level="INFO">Clicking element 'css:[data-test='login-button']'.</msg>
+<status status="PASS" starttime="20211109 15:06:54.376" endtime="20211109 15:06:54.775"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:54.376" endtime="20211109 15:06:54.776"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${error}'=='NA'</arg>
+<arg>Verify user logged in successfully</arg>
+<arg>ELSE</arg>
+<arg>Verify error "${error}" for user login</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Verify user logged in successfully" library="LoginResources">
+<kw name="Verify Login" library="LoginPage.LoginPage">
+<msg timestamp="20211109 15:06:54.779" level="INFO">verify_login (self = &lt;LoginPage.LoginPage object at 0x000001C394610EB0&gt;, success = True, exp_error = '' )</msg>
+<msg timestamp="20211109 15:06:54.779" level="INFO">Verifying successful user login</msg>
+<msg timestamp="20211109 15:06:54.839" level="INFO">Header: Actual: PRODUCTS, Expected: PRODUCTS</msg>
+<msg timestamp="20211109 15:06:54.839" level="INFO">User logged in successfully</msg>
+<status status="PASS" starttime="20211109 15:06:54.778" endtime="20211109 15:06:54.839"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:54.777" endtime="20211109 15:06:54.839"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:54.776" endtime="20211109 15:06:54.839"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:54.375" endtime="20211109 15:06:54.840"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211109 15:06:54.840" endtime="20211109 15:06:54.840"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" starttime="20211109 15:06:54.374" endtime="20211109 15:06:54.840"/>
+</test>
+<test id="s1-s2-t4" name="TC04: Verify performance glitch user logs in successfully">
+<kw name="Verify login functionality">
+<arg>performance_glitch_user</arg>
+<arg>secret_sauce</arg>
+<arg>NA</arg>
+<kw name="User with name &quot;${username}&quot; and password &quot;${password}&quot; tries to log in into application" library="LoginResources" sourcename="User with name &quot;${uname}&quot; and password &quot;${pwd}&quot; tries to log in into application">
+<kw name="Login" library="LoginPage.LoginPage">
+<arg>${uname}</arg>
+<arg>${pwd}</arg>
+<msg timestamp="20211109 15:06:54.842" level="INFO">login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E58D0&gt;, username = 'performance_glitch_user', password = 'secret_sauce' )</msg>
+<msg timestamp="20211109 15:06:55.033" level="INFO">Current page URL: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:06:55.034" level="INFO">Login page is not opened. Looks like user is already logged in. Logging out from application</msg>
+<msg timestamp="20211109 15:06:55.034" level="INFO">Clicking element 'css=#react-burger-menu-btn'.</msg>
+<msg timestamp="20211109 15:06:55.097" level="INFO">Clicking link 'css=#logout_sidebar_link'.</msg>
+<msg timestamp="20211109 15:06:55.227" level="INFO">Typing text 'performance_glitch_user' into text field 'css:[data-test='username']'.</msg>
+<msg timestamp="20211109 15:06:55.373" level="INFO">Typing password into text field 'css:[data-test='password']'.</msg>
+<msg timestamp="20211109 15:06:55.412" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211109 15:06:55.463" level="INFO">Log level changed from NONE to INFO.</msg>
+<msg timestamp="20211109 15:06:55.463" level="INFO">Clicking element 'css:[data-test='login-button']'.</msg>
+<status status="PASS" starttime="20211109 15:06:54.842" endtime="20211109 15:07:00.526"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:54.842" endtime="20211109 15:07:00.527"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${error}'=='NA'</arg>
+<arg>Verify user logged in successfully</arg>
+<arg>ELSE</arg>
+<arg>Verify error "${error}" for user login</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Verify user logged in successfully" library="LoginResources">
+<kw name="Verify Login" library="LoginPage.LoginPage">
+<msg timestamp="20211109 15:07:00.530" level="INFO">verify_login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E58D0&gt;, success = True, exp_error = '' )</msg>
+<msg timestamp="20211109 15:07:00.531" level="INFO">Verifying successful user login</msg>
+<msg timestamp="20211109 15:07:00.677" level="INFO">Header: Actual: PRODUCTS, Expected: PRODUCTS</msg>
+<msg timestamp="20211109 15:07:00.677" level="INFO">User logged in successfully</msg>
+<status status="PASS" starttime="20211109 15:07:00.529" endtime="20211109 15:07:00.677"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:00.528" endtime="20211109 15:07:00.677"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:00.527" endtime="20211109 15:07:00.677"/>
+</kw>
+<status status="PASS" starttime="20211109 15:06:54.841" endtime="20211109 15:07:00.677"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211109 15:07:00.678" endtime="20211109 15:07:00.678"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" starttime="20211109 15:06:54.841" endtime="20211109 15:07:00.678"/>
+</test>
+<test id="s1-s2-t5" name="TC05: Verify user login fails with invalid creds">
+<kw name="Verify login functionality">
+<arg>standard_user</arg>
+<arg>secret_sauce1</arg>
+<arg>invalid_credentials</arg>
+<kw name="User with name &quot;${username}&quot; and password &quot;${password}&quot; tries to log in into application" library="LoginResources" sourcename="User with name &quot;${uname}&quot; and password &quot;${pwd}&quot; tries to log in into application">
+<kw name="Login" library="LoginPage.LoginPage">
+<arg>${uname}</arg>
+<arg>${pwd}</arg>
+<msg timestamp="20211109 15:07:00.681" level="INFO">login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E5210&gt;, username = 'standard_user', password = 'secret_sauce1' )</msg>
+<msg timestamp="20211109 15:07:05.977" level="INFO">Current page URL: https://www.saucedemo.com/inventory.html</msg>
+<msg timestamp="20211109 15:07:05.977" level="INFO">Login page is not opened. Looks like user is already logged in. Logging out from application</msg>
+<msg timestamp="20211109 15:07:05.977" level="INFO">Clicking element 'css=#react-burger-menu-btn'.</msg>
+<msg timestamp="20211109 15:07:06.038" level="INFO">Clicking link 'css=#logout_sidebar_link'.</msg>
+<msg timestamp="20211109 15:07:06.155" level="INFO">Typing text 'standard_user' into text field 'css:[data-test='username']'.</msg>
+<msg timestamp="20211109 15:07:06.270" level="INFO">Typing password into text field 'css:[data-test='password']'.</msg>
+<msg timestamp="20211109 15:07:06.317" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211109 15:07:06.395" level="INFO">Log level changed from NONE to INFO.</msg>
+<msg timestamp="20211109 15:07:06.395" level="INFO">Clicking element 'css:[data-test='login-button']'.</msg>
+<status status="PASS" starttime="20211109 15:07:00.681" endtime="20211109 15:07:06.451"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:00.680" endtime="20211109 15:07:06.452"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${error}'=='NA'</arg>
+<arg>Verify user logged in successfully</arg>
+<arg>ELSE</arg>
+<arg>Verify error "${error}" for user login</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Verify error &quot;invalid_credentials&quot; for user login" library="LoginResources" sourcename="Verify error &quot;${error}&quot; for user login">
+<kw name="Verify Login" library="LoginPage.LoginPage">
+<arg>success=${False}</arg>
+<arg>exp_error=${error}</arg>
+<msg timestamp="20211109 15:07:06.453" level="INFO">verify_login (self = &lt;LoginPage.LoginPage object at 0x000001C3945E5210&gt;, success = False, exp_error = 'invalid_credentials' )</msg>
+<msg timestamp="20211109 15:07:06.453" level="INFO">Verifying failed user login</msg>
+<msg timestamp="20211109 15:07:06.454" level="INFO">Expected Error Message: Epic sadface: Username and password do not match any user in this service</msg>
+<msg timestamp="20211109 15:07:06.476" level="INFO">Actual Error Message: Epic sadface: Username and password do not match any user in this service</msg>
+<msg timestamp="20211109 15:07:06.476" level="INFO">Successfully verified user login failure</msg>
+<status status="PASS" starttime="20211109 15:07:06.453" endtime="20211109 15:07:06.476"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:06.453" endtime="20211109 15:07:06.476"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:06.452" endtime="20211109 15:07:06.476"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:00.680" endtime="20211109 15:07:06.476"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211109 15:07:06.477" endtime="20211109 15:07:06.477"/>
+</kw>
+<tag>regression</tag>
+<tag>sanity</tag>
+<status status="PASS" starttime="20211109 15:07:00.679" endtime="20211109 15:07:06.477"/>
+</test>
+<test id="s1-s2-t6" name="TC07: Verify error when user does not enter username">
+<kw name="Verify login functionality">
+<arg>${None}</arg>
+<arg>secret_sauce</arg>
+<arg>no_username</arg>
+<kw name="User with name &quot;${username}&quot; and password &quot;${password}&quot; tries to log in into application" library="LoginResources" sourcename="User with name &quot;${uname}&quot; and password &quot;${pwd}&quot; tries to log in into application">
+<kw name="Login" library="LoginPage.LoginPage">
+<arg>${uname}</arg>
+<arg>${pwd}</arg>
+<msg timestamp="20211109 15:07:06.479" level="INFO">login (self = &lt;LoginPage.LoginPage object at 0x000001C394611900&gt;, username = None, password = 'secret_sauce' )</msg>
+<msg timestamp="20211109 15:07:06.529" level="INFO">Current page URL: https://www.saucedemo.com/</msg>
+<msg timestamp="20211109 15:07:06.551" level="INFO">Typing password into text field 'css:[data-test='password']'.</msg>
+<msg timestamp="20211109 15:07:06.593" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211109 15:07:06.648" level="INFO">Log level changed from NONE to INFO.</msg>
+<msg timestamp="20211109 15:07:06.648" level="INFO">Clicking element 'css:[data-test='login-button']'.</msg>
+<status status="PASS" starttime="20211109 15:07:06.479" endtime="20211109 15:07:06.708"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:06.479" endtime="20211109 15:07:06.709"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${error}'=='NA'</arg>
+<arg>Verify user logged in successfully</arg>
+<arg>ELSE</arg>
+<arg>Verify error "${error}" for user login</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Verify error &quot;no_username&quot; for user login" library="LoginResources" sourcename="Verify error &quot;${error}&quot; for user login">
+<kw name="Verify Login" library="LoginPage.LoginPage">
+<arg>success=${False}</arg>
+<arg>exp_error=${error}</arg>
+<msg timestamp="20211109 15:07:06.710" level="INFO">verify_login (self = &lt;LoginPage.LoginPage object at 0x000001C394611900&gt;, success = False, exp_error = 'no_username' )</msg>
+<msg timestamp="20211109 15:07:06.711" level="INFO">Verifying failed user login</msg>
+<msg timestamp="20211109 15:07:06.711" level="INFO">Expected Error Message: Epic sadface: Username is required</msg>
+<msg timestamp="20211109 15:07:06.743" level="INFO">Actual Error Message: Epic sadface: Username is required</msg>
+<msg timestamp="20211109 15:07:06.743" level="INFO">Successfully verified user login failure</msg>
+<status status="PASS" starttime="20211109 15:07:06.710" endtime="20211109 15:07:06.743"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:06.710" endtime="20211109 15:07:06.744"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:06.709" endtime="20211109 15:07:06.744"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:06.478" endtime="20211109 15:07:06.744"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211109 15:07:06.744" endtime="20211109 15:07:06.744"/>
+</kw>
+<tag>regression</tag>
+<tag>sanity</tag>
+<status status="PASS" starttime="20211109 15:07:06.477" endtime="20211109 15:07:06.744"/>
+</test>
+<test id="s1-s2-t7" name="TC08: Verify error when user does not enter password">
+<kw name="Verify login functionality">
+<arg>standard_user</arg>
+<arg>${None}</arg>
+<arg>no_password</arg>
+<kw name="User with name &quot;${username}&quot; and password &quot;${password}&quot; tries to log in into application" library="LoginResources" sourcename="User with name &quot;${uname}&quot; and password &quot;${pwd}&quot; tries to log in into application">
+<kw name="Login" library="LoginPage.LoginPage">
+<arg>${uname}</arg>
+<arg>${pwd}</arg>
+<msg timestamp="20211109 15:07:06.747" level="INFO">login (self = &lt;LoginPage.LoginPage object at 0x000001C394612BC0&gt;, username = 'standard_user', password = None )</msg>
+<msg timestamp="20211109 15:07:06.812" level="INFO">Current page URL: https://www.saucedemo.com/</msg>
+<msg timestamp="20211109 15:07:06.835" level="INFO">Typing text 'standard_user' into text field 'css:[data-test='username']'.</msg>
+<msg timestamp="20211109 15:07:06.947" level="INFO">Clicking element 'css:[data-test='login-button']'.</msg>
+<status status="PASS" starttime="20211109 15:07:06.746" endtime="20211109 15:07:07.007"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:06.746" endtime="20211109 15:07:07.007"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${error}'=='NA'</arg>
+<arg>Verify user logged in successfully</arg>
+<arg>ELSE</arg>
+<arg>Verify error "${error}" for user login</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Verify error &quot;no_password&quot; for user login" library="LoginResources" sourcename="Verify error &quot;${error}&quot; for user login">
+<kw name="Verify Login" library="LoginPage.LoginPage">
+<arg>success=${False}</arg>
+<arg>exp_error=${error}</arg>
+<msg timestamp="20211109 15:07:07.010" level="INFO">verify_login (self = &lt;LoginPage.LoginPage object at 0x000001C394612BC0&gt;, success = False, exp_error = 'no_password' )</msg>
+<msg timestamp="20211109 15:07:07.010" level="INFO">Verifying failed user login</msg>
+<msg timestamp="20211109 15:07:07.011" level="INFO">Expected Error Message: Epic sadface: Password is required</msg>
+<msg timestamp="20211109 15:07:07.041" level="INFO">Actual Error Message: Epic sadface: Password is required</msg>
+<msg timestamp="20211109 15:07:07.041" level="INFO">Successfully verified user login failure</msg>
+<status status="PASS" starttime="20211109 15:07:07.010" endtime="20211109 15:07:07.041"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:07.009" endtime="20211109 15:07:07.042"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:07.008" endtime="20211109 15:07:07.042"/>
+</kw>
+<status status="PASS" starttime="20211109 15:07:06.745" endtime="20211109 15:07:07.042"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211109 15:07:07.042" endtime="20211109 15:07:07.042"/>
+</kw>
+<tag>regression</tag>
+<tag>sanity</tag>
+<status status="PASS" starttime="20211109 15:07:06.745" endtime="20211109 15:07:07.042"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211109 15:07:07.043" endtime="20211109 15:07:09.215"/>
+</kw>
+<doc>Login to test application</doc>
+<status status="PASS" starttime="20211109 15:06:50.283" endtime="20211109 15:07:09.215"/>
+</suite>
+<status status="PASS" starttime="20211109 15:06:35.585" endtime="20211109 15:07:09.217"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="8" fail="0" skip="0">regression</stat>
+<stat pass="5" fail="0" skip="0">sanity</stat>
+</tag>
+<suite>
+<stat pass="8" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="EndToEnd">Tests.EndToEnd</stat>
+<stat pass="7" fail="0" skip="0" id="s1-s2" name="Login">Tests.Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,8 @@
+*** Settings ***
+Documentation   Resource file for Inventory Page related resources
+Library         InventoryPage.InventoryPage
+
+*** Keywords ***
+Verify product "${product}" is listed on inventory page
+    check_product_listing       ${product}
+
