@@ -1,0 +1,19 @@
+*** Settings ***
+Documentation   Resource file for Checkout Page related keywords. All keywords for checkout page will be added in this file.
+Library         CheckoutPage.CheckoutPage
+
+*** Keywords ***
+Navigate to checkout page
+    go_to_checkout_page
+
+Fill checkout information as firstname "${fn}" lastname "${ln}" and zipcode "${zc}"
+    fill_checkout_information   ${fn}   ${ln}    ${zc}
+
+Verify details on checkout overview page for item "${item}" and quantity "${quantity}"
+    verify_details_on_overview_page     ${item}      quantities=${quantity}
+
+Complete checkout and verify successful checkout
+    complete_checkout_and_verify
+
+Navigate back to home from complete checkout page
+    navigate_to_home

@@ -1,0 +1,13 @@
+*** Settings ***
+Documentation   Resource file for Cart Page keywords. All keywords for cart page will be added in this file.
+Library         CartPage.CartPage
+
+*** Keywords ***
+Navigate to cart page
+    go_to_cart_page
+
+Verify item "${item}" with quantity "${quantity}" exists in cart
+    verify_item_in_cart     ${item}      quantity=${quantity}
+
+Remove item "${item}" from cart
+    remove_item_from_cart   ${item}

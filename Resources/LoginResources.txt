@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   Resource file for Login Page related resources
+Documentation   Resource file for Login Page keywords. All keywords for login page will be added in this file.
 Library         LoginPage.LoginPage
 Library         SeleniumLibrary
 
@@ -7,6 +7,7 @@ Library         SeleniumLibrary
 Open Browser with Login Page
     ${orig_wait}=   Set Selenium Implicit Wait	5 seconds
     open_login_page
+    Maximize Browser Window
 
 User with name "${uname}" and password "${pwd}" tries to log in into application
     login       ${uname}        ${pwd}
@@ -16,4 +17,7 @@ Verify user logged in successfully
 
 Verify error "${error}" for user login
     verify_login    success=${False}    exp_error=${error}
+
+User logs out from an application
+    logout
 
