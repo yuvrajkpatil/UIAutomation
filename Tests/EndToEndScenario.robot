@@ -1,5 +1,5 @@
 * Settings *
-Documentation       Login to test application
+Documentation       This suite verifies End to End workflow for application. Covers sanity of most of the functionalities
 Library             SeleniumLibrary
 Library             Collections
 Resource            Resources//LoginResources.txt

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# This file will have all products information which are displayed on inventory page.
+# This file will have all items information which are displayed on inventory page.
 backpack = {
     'name': 'Sauce Labs Backpack',
     'locator': 'sauce-labs-backpack',
