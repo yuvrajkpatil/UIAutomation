@@ -1,9 +1,11 @@
-# RobotFramework-Python3-SeleniumLibrary-WebTestSuite
+# RobotFramework-Python3-SeleniumLibrary- Web UI Automation.
 
 ![alt text](https://raw.githubusercontent.com/yuvrajkpatil/UIAutomation/main/images/banner.png)
 
 Tested on:
 ------------------
+Used Web App: https://www.saucedemo.com/
+
 Robot Framework 4.1.2 (Python 3.10.0 on win64)
 
 Python 3.10.0
@@ -18,7 +20,7 @@ Required installations:
 --------------------
 Install python3 from following website for your machine architecture.
 
-Python 3  -> https://www.python.org/downloads/
+Python 3 -> https://www.python.org/downloads/
 
 Install required dependencies using pip once python is installed.
 
